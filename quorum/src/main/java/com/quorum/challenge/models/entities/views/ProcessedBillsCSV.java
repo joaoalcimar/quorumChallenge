@@ -29,5 +29,11 @@ public class ProcessedBillsCSV {
 
     Integer voteId;
 
+    public void incrementSupportedVote(){this.supporterCount++;}
 
+    public void incrementOpposedVote(){this.opposerCount++;}
+
+    public String[] toStringArray(){
+        return new String[]{id.toString(), title, supporterCount.toString(), opposerCount.toString(), primarySponsor};
+    }
 }

@@ -4,4 +4,5 @@ import lombok.Getter;
 
 @Getter
 public abstract class DataCSV {
+    public abstract Object buildModelFromCSV(String[] metadata);
 }

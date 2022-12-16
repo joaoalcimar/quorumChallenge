@@ -22,4 +22,11 @@ public class ProcessedLegislatorsVotesCSV{
     @CsvBindByName(column = "num_opposed_bills")
     Integer numOpposedBills = 0;
 
+    public void incrementSupportedVote(){this.numSupportedBills++;}
+
+    public void incrementOpposedVote(){this.numOpposedBills++;}
+
+    public String[] toStringArray(){
+        return new String[]{id.toString(), name, numSupportedBills.toString(), numOpposedBills.toString()};
+    }
 }

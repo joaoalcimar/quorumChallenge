@@ -24,4 +24,11 @@ public class VoteResultsCSV extends DataCSV {
     @CsvBindByName(column = "vote_type")
     private Integer voteType;
 
+    public VoteResultsCSV buildModelFromCSV(String[] metadata) {
+        Integer id = Integer.parseInt(metadata[0]);
+        Integer legislatorId = Integer.parseInt(metadata[1]);
+        Integer voteId = Integer.parseInt(metadata[2]);
+        Integer voteType = Integer.parseInt(metadata[3]);
+        return new VoteResultsCSV(id, legislatorId, voteId, voteType);
+    }
 }

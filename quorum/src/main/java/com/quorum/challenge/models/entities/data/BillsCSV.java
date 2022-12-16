@@ -21,5 +21,10 @@ public class BillsCSV extends DataCSV {
     @CsvBindByName(column = "Primary Sponsor")
     private Integer primarySponsor;
 
-
+    public BillsCSV buildModelFromCSV(String[] metadata) {
+        Integer id = Integer.parseInt(metadata[0]);
+        String title = metadata[1];
+        Integer primarySponsor = Integer.parseInt(metadata[2]);
+        return new BillsCSV(id, title, primarySponsor);
+    }
 }

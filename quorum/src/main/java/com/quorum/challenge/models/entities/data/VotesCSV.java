@@ -18,4 +18,9 @@ public class VotesCSV extends DataCSV {
     @CsvBindByName(column = "bill_id")
     private Integer billId;
 
+    public VotesCSV buildModelFromCSV(String[] metadata) {
+        Integer id = Integer.parseInt(metadata[0]);
+        Integer billId = Integer.parseInt(metadata[1]);
+        return new VotesCSV(id, billId);
+    }
 }
